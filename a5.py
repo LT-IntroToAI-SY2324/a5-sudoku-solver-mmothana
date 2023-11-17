@@ -195,9 +195,6 @@ def DFS(state: Board) -> Board:
     # Create a stack
     the_stack = Stack([state])
     count = 0
-    # print(the_stack)
-    # 1Add the initial state (root) to the <stack>
-    # 2Choose a node (curr) to examine from the <stack> (if there is nothing in <stack> - FAILURE)
     while not the_stack.is_empty():
         # print(the_stack)
         curr = the_stack.pop()
@@ -214,12 +211,6 @@ def DFS(state: Board) -> Board:
                 cpy.update(row, col, sel)
                 # print(row, col, sel)
                 the_stack.push(cpy)
-                
-    # 3Is curr a goal state?
-    # If so, SOLUTION
-    # If not, continue
-    # 4Expand curr by applying all possible operations (add the new states to the <stack>)
-    # 5Go to step 2
             
     return None
 
@@ -236,7 +227,24 @@ def BFS(state: Board) -> Board:
     Returns:
         either None in the case of invalid input or a solved board
     """
-    pass
+    the_queue = Queue([state])
+    count = 0
+    while not the_queue.is_empty():
+        curr = the_queue.pop()
+        count += 1
+        if curr.goal_test():
+            print(f"It took {count} iterations to solve")
+            return curr
+        elif not curr.failure_test():
+            row, col = curr.find_most_constrained_cell()
+            mcc = curr.rows[row][col]
+            for sel in mcc:
+                cpy = copy.deepcopy(curr)
+                cpy.update(row, col, sel)
+                # print(row, col, sel)
+                the_queue.push(cpy)
+
+    return None
 
 
 if __name__ == "__main__":   

@@ -23,12 +23,14 @@ After completing the assignment, answer the following reflection questions:
 
 1. How do the performance and efficiency of the Depth-First Search (DFS) and Breadth-First Search (BFS) algorithms compare when solving Sudoku puzzles? In what scenarios might one approach be preferable over the other?
 
+The difference between DFS and BFS is that DFS goes for the longest path to the solution while BFS goes for the shortest path. I would say that BFS would be better when the sudoku is close to being done while DFS could be used when there's not too many numbers filled in.
 
 
 2. How did the choice of data structures (like the Stack for DFS and Queue for BFS) impact the implementation and functionality of the algorithms? Are there alternative data structures or design patterns that could have been used to achieve the same objectives?
 
+The choice of data structures impact the implementation and functionality of the algortihims as stacks, the element inserted last comes out first while queues, the element inserted first comes at first, so the impact of the data strucutres impact the implementation and functionality as stacks would try to the find the hardest numbers while queue would start by finding the easiest numbers. I am not sure what other data strucutres could be used to better acheive the same objectives.
 
 
 3. Considering the current implementation, how might the Sudoku solver be adapted or extended for larger puzzles or different types of grid-based logic games? How can the lessons learned from this assignment be applied to real-world problem-solving or optimization challenges?
 
-
+The Sudoku solver could be adapted for larger puzzles or different types of grid-bases logic games by changing the code a bit to be able to do those puzzles. We already have most of the coding down but some changes are needed for the code to hold bigger sudoku boards. These lessons could be used in real-world problems as we could use codes like the sudoku solver to organize complex things that we would have a hard time solving.
